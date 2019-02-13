@@ -221,3 +221,121 @@ func MapToIndentJSON(m interface{}) (string, error) {
 		return fmt.Sprintf("RecordMap: %+v", m), err
 	}
 }
+
+func MapToFloat32List(m map[string]interface{}, key string) ([]float32, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]float32); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToFloat64List(m map[string]interface{}, key string) ([]float64, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]float64); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToInt8List(m map[string]interface{}, key string) ([]int8, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]int8); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToInt16List(m map[string]interface{}, key string) ([]int16, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]int16); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+func MapToInt32List(m map[string]interface{}, key string) ([]int32, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]int32); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToInt64List(m map[string]interface{}, key string) ([]int64, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]int64); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToUint8List(m map[string]interface{}, key string) ([]uint8, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]uint8); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToUint16List(m map[string]interface{}, key string) ([]uint16, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]uint16); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+func MapToUint32List(m map[string]interface{}, key string) ([]uint32, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]uint32); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToUint64List(m map[string]interface{}, key string) ([]uint64, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]uint64); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
