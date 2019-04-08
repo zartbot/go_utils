@@ -339,3 +339,15 @@ func MapToUint64List(m map[string]interface{}, key string) ([]uint64, error) {
 		return nil, errors.New("Key is not exist")
 	}
 }
+
+func MapToBytes(m map[string]interface{}, key string) ([]byte, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.([]byte); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
