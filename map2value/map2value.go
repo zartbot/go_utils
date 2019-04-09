@@ -213,6 +213,54 @@ func MapToMapStringInterface(m map[string]interface{}, key string) (map[string]i
 	}
 }
 
+func MapToMapStringInt32(m map[string]interface{}, key string) (map[string]int32, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.(map[string]int32); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToMapStringInt64(m map[string]interface{}, key string) (map[string]int64, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.(map[string]int64); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToMapStringUInt32(m map[string]interface{}, key string) (map[string]uint32, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.(map[string]uint32); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
+func MapToMapStringUInt64(m map[string]interface{}, key string) (map[string]uint64, error) {
+	if _v, valid := m[key]; valid {
+		if v, ok := _v.(map[string]uint64); ok {
+			return v, nil
+		} else {
+			return nil, errors.New("mismatched Type")
+		}
+	} else {
+		return nil, errors.New("Key is not exist")
+	}
+}
+
 func MapToIndentJSON(m interface{}) (string, error) {
 	recordString, err := json.MarshalIndent(m, "", "\t")
 	if err == nil {
