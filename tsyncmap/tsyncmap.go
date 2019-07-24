@@ -64,6 +64,15 @@ func (tmap *Map) LoadRestApi(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func (tmap *Map) GetRemainTime(key interface{}) (time.Duration, error) {
+	exp, ok := tmap.ExpireTime.Load(key)
+	if ok {
+		remainTime := exp.(time.Time).Sub(time.Now())
+		return remainTime, nil
+	}
+	return 0 * time.Second, fmt.Errorf("key does not exist")
+}
+
 //Store is used save the key,value pairs in tsyncmap
 func (tmap *Map) Store(key interface{}, value interface{}, currentTime time.Time) {
 	//Check ExpireTime Map.
