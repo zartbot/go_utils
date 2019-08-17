@@ -1,5 +1,5 @@
 // Package reader : Reader for bytestream buf
-package reader
+package bytereader
 
 import (
 	"encoding/binary"
